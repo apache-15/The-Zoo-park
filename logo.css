@@ -1,0 +1,114 @@
+/* ============================================= */
+/* ЛОГОТИП-ЛАПА */
+/* ============================================= */
+:root {
+    --paw-color: #B5835A;    /* цвет лапы */
+    --paw-size: 48px;        /* базовый размер квадрата лапы */
+}
+
+/* Обёртка ссылки-логотипа */
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+/* Квадрат-контейнер для иконки */
+.logo-paw {
+    position: relative;
+    width: var(--paw-size);
+    height: var(--paw-size);
+    flex-shrink: 0;
+}
+
+/* Общий стиль для всех элементов лапы */
+.paw-toe,
+.paw-pad {
+    position: absolute;
+    background-color: #754525;
+}
+
+/* =========================
+   ПАЛЬЦЫ
+   ========================= */
+
+.paw-toe {
+    z-index: 2;
+    border-radius: 50%;
+}
+
+/* Верхний левый */
+.toe-1 {
+    top: 15%;
+    left: 25%;
+    width: 20%;
+    height: 29%;
+    transform: rotate(-12deg);
+}
+
+/* Верхний правый */
+.toe-2 {
+    top: 15%;
+    right: 25%;
+    width: 20%;
+    height: 29%;
+    transform: rotate(12deg);
+}
+
+/* Левый боковой */
+.toe-3 {
+    top: 30%;
+    left: 0%;
+    width: 20%;
+    height: 27%;
+    transform: rotate(-35deg);
+}
+
+/* Правый боковой */
+.toe-4 {
+    top: 30%;
+    right: 0%;
+    width: 20%;
+    height: 27%;
+    transform: rotate(35deg);
+}
+
+.paw-pad {
+    z-index: 1;
+
+    left: 50%;
+    bottom: 3%;
+
+    width: 64%;
+    height: 51%;
+
+    transform: translateX(-50%);
+
+    border-radius:
+        48% 48% 42% 42%
+        / 48% 48% 55% 55%;
+}
+
+/* Текст рядом с лапой */
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--color-white);
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* ============================================= */
+/* АДАПТИВ */
+/* ============================================= */
+@media (max-width: 480px) {
+    .logo-text {
+        display: none;
+    }
+
+    :root {
+        --paw-size: 40px;
+    }
+}

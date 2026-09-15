@@ -1,0 +1,420 @@
+/* задаём константы цветов */
+:root {
+    --color-bg:      #FDFBF7;  /* бежевый фон страницы */
+    --color-primary: #7E8F6E;  /* оливково-зелёный (обои) */
+    --color-accent:  #8B3A22;  /* тёмно-коричневый (стол, стулья) */
+    --color-heading: #5A4A42;  /* заголовки */
+    --color-text:    #333333;  /* основной текст */
+    --color-muted:   #666666;  /* приглушённый текст */
+    --color-white:   #FFFFFF;  /* белый (окно) */
+}
+
+* { /* настройка расчёта размеров картинок*/
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--color-primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+body { /* убираем отступы */
+    margin: 0;
+}
+
+body {
+    font-family: 'Comic Relief', cursive;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;/* размер страницы - весь экран */
+}
+
+/* ПОЛОСКА */
+.stripe{
+    height: 30px;
+    background-color: var(--color-primary);
+    width: 100%;
+}
+
+
+.stripe-bottom{
+    flex-shrink: 0; /* не сжиматься */
+    margin-top: auto; /* прижать к низу */
+}
+
+.content {
+    flex: 1;
+    display: flex; /* превращение в flex-контейнер, чтобы работали выравнивания */
+    flex-direction: column;
+    align-items: center; /* выравнивание по центру */
+    justify-content: center; /* выравнивание по вертикали */
+    padding: 40px 20px;
+    text-align: center; /* выравнивание текста по центру */
+}
+
+.content h1 {
+    font-size: 32px;
+    color: var(--color-heading);
+    margin-bottom: 15px; /* отступ снизу */
+}
+
+.pic-caption {
+    color: var(--color-muted);
+    max-width: 500px; /* ограничение ширины */
+    margin-bottom: 30px;
+    line-height: 1.5; /* межстрочный интервал */
+}
+
+/* КАРТИНКА */
+.pic-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pic {
+    position: relative;
+    width: max(200px, 60%);
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-primary);
+    border: 0.25em solid var(--color-white);
+}
+
+.window {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #5A7CED;
+    border: 0.25em solid var(--color-white);
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    overflow: hidden;
+}
+
+/* Блик на стекле */
+.window::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+}
+
+
+.sun {
+    position: absolute;
+    top: -14%;
+    right: -14%;
+    width: 40%;
+    height: 40%;
+    background: #F5D547;
+    border-radius: 50%;
+    border: 0.3em solid #E5B93A;
+    z-index: 1;
+}
+
+/* Верхний ряд — 5 кружков, центр каждого на верхней грани окна */
+.circle_container_top {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 50%;            /* ширина окна */
+    height: 10%;           /* диаметр кружка */
+    display: flex;
+    z-index: 1;
+}
+
+.circle_container_top .circle {
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    background: transparent; /* прозрачная середина */
+    border: 0.4em solid var(--color-white);  /* белое кольцо */
+    border-radius: 50%;
+}
+
+/* Контейнер с двумя столбцами */
+.circles_container {
+    position: absolute;
+    top: 15%;              /* = верхняя грань окна */
+    left: 20%;             /* отступ слева: 25% − 5% (радиус) */
+    right: 20%;
+    height: 50%;           /* = высота окна, ровно под 5 кружков */
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+/* Один столбец из 5 кружков */
+.circles-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   /* оставляем, но контейнер точно 50% */
+    width: 16.67%;         /* 10% / 60% × 100% = ширина кружка */
+    height: 100%;
+}
+
+.circles-wrapper .circle {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: transparent;
+    border: 0.4em solid var(--color-white);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.table {
+    position: absolute;
+    top: 61%;
+    left: 25%;
+    width: 50%;
+    height: 4%;
+    background: var(--color-accent);
+    z-index: 7;
+}
+
+.stand1 {
+    position: absolute;
+    top: 63%;
+    left: 40%;
+    width: 20%;
+    height: 25%;
+    background: var(--color-accent);
+    z-index: 6;
+
+    clip-path: ellipse(30% 50% at 50% 50%);
+}
+
+.stand2 {
+    position: absolute;
+    top: 82%; 
+    left: 34%;
+    width: 32%;    /* Основание должно быть широким */
+    height: 18%;   /* Высота треугольника */
+    background: var(--color-accent);
+    z-index: 5;
+    
+    
+    clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+}
+
+.teapot {
+    position: absolute;
+    top: 41%;
+    left: 40%;
+    width: 25%;
+    height: 20%;
+    z-index: 8;
+}
+
+.teapot-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* форма: верх круглый, низ чуть приплюснут */
+    border-radius: 50% 50% 30% 30%;
+    
+    background: radial-gradient(
+        circle at 35% 50%,
+        #e7dee1 0%,
+        #eb0477 100%
+    );
+    
+    z-index: 3;
+}
+
+.teapot-lid1 {
+    position: absolute;
+    top: -25%;
+    left: 17%;
+    width: 60%;
+    height: 50%;
+
+    background: radial-gradient(
+        circle at 35% 50%,
+        #e7dee1 0%,
+        #eb0477 100%
+    );
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.teapot-lid2 {
+    position: absolute;
+    top: -32%;
+    left: 40%;
+    width: 18%;
+    height: 18%;
+
+    background: #c2035e;
+    border-radius: 50%;
+    z-index: 1;           
+
+}
+
+.teapot-spout {
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    width: 40%;
+    height: 18%;
+
+    transform: rotate(45deg);
+
+    background: #eb0477;
+    z-index: 2;
+
+}
+
+.teapot-handle {
+    position: absolute;
+    top: 0%;
+    left: 85%;
+    width: 45%;
+    height: 60%;
+
+    background: transparent;
+    border: 5px solid #dd398b;
+    border-radius: 50%;
+
+    z-index: 2;
+}
+
+/* СТУЛЬЯ */
+.chair-left{
+    position: absolute;
+    width: 40%;
+    height: 70%;
+    top: 27%;
+    left: 5%;
+    overflow: hidden;
+}
+
+.chair-left::after{
+    content: "";
+    position: absolute;
+    width: 19%;
+    height: 100%;
+    border-radius: 0 100% 100% 0;
+    background-color: transparent;
+    border: 0.5em solid #b65f1dd7;
+    left:-15%;
+}
+
+.chair-left::before{
+    content: "";
+    position: absolute;
+    height: 6%;
+    width:70%;
+    background-color: #b65f1dd7;
+    top: 70%;
+    left: 6%;
+}
+
+.leg-left{
+    position: absolute;
+    height: 30%;
+    width: 10%;
+    background-color: #b65f1dd7;
+    top: 70%;
+    left: 56%;
+}
+
+.chair-left .spots_container {
+    position: absolute;
+    width: 50%;
+    height: 10%;
+    flex-direction: row;
+    display: flex;   
+    top: 52%;
+    bottom: 0;
+    left: -10%;
+    right: 0;
+    margin: auto;
+    gap: 20%;
+}
+
+.chair-left .spot{
+    height: 30%;
+    width: 20%;
+    background: #4d280d;
+    border: 0px;
+    border-radius: 50%;
+}
+
+.chair-right{
+    position: absolute;
+    width: 40%;
+    height: 70%;
+    top: 27%;
+    left: 55%;
+    overflow: hidden;
+}
+
+.chair-right::after{
+    content: "";
+    position: absolute;
+    width: 19%;
+    height: 100%;
+    border-radius: 100% 0 0 100%;
+    background-color: transparent;
+    border: 0.5em solid #b65f1dd7;
+    right: -15%;
+}  
+
+.chair-right::before{
+    content: "";
+    position: absolute;
+    height: 6%;
+    width:70%;
+    background-color: #b65f1dd7;
+    top: 70%;
+    right: 6%;
+}
+
+.leg-right{
+    position: absolute;
+    height: 30%;
+    width: 10%;
+    background-color: #b65f1dd7;
+    top: 70%;
+    right: 56%;
+}
+
+.chair-right .spots_container{
+    position: absolute;
+    width: 50%;
+    height: 10%;
+    flex-direction: row;
+    display: flex;   
+    top: 52%;
+    bottom: 0;
+    right: -10%;
+    left: 0;
+    margin: auto;
+    gap: 20%;
+}
+
+.chair-right .spot{
+    height: 30%;
+    width: 20%;
+    background: #4d280d;
+    border: 0px;
+    border-radius: 50%;
+}
+

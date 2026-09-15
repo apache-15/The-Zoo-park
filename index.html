@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The ZOO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="logo.css">
+</head>
+
+<body>
+
+    <!-- ШАПКА -->
+    <header class="header">
+        <a href="index.html" class="logo-link">
+            <div class="logo-paw">
+                <div class="paw-toe toe-1"></div>
+                <div class="paw-toe toe-2"></div>
+                <div class="paw-toe toe-3"></div>
+                <div class="paw-toe toe-4"></div>
+                <div class="paw-pad"></div>
+            </div>
+            <span class="logo-text">The ZOO</span>
+        </a>
+
+        <nav class="nav">
+            <a href="#about">О нас</a>
+            <a href="#zones">Зоны</a>
+            <a href="#animals">Животные</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section id="about" class="hero">
+        <img src="images/tree-left.webp" alt="" class="hero-decor hero-tree-left">
+        <img src="images/lion-hero.webp" alt="Лев" class="hero-decor hero-lion">
+        <img src="images/tree-right.webp" alt="" class="hero-decor hero-tree-right">
+
+        <h1>Познакомьтесь с "The ZOO"</h1>
+
+        <div class="hero-content">
+            <p>The Zoo основан в 1985 году биологами под руководством профессора Александра Морозова как питомник для раненых животных. 
+                Сегодня это комплекс на 40 гектаров с миссией сохранения биоразнообразия. 
+                Здесь живут 3000 животных 350 видов. Работают зоны: «Африканская саванна», «Тропический лес», «Детский зоопарк», сафари-парк и аквариум.
+            </p>
+            <p>Мы участвуем в программах разведения редких видов (амурский тигр, леопард, белый медведь), проводим экскурсии и ночные туры. 
+                Наши волонтёры и научные сотрудники ежедневно заботятся о животных. Мы также предлагаем образовательные лекции и мастер-классы для школьников и студентов. 
+                The Zoo открыт ежедневно с 10:00 до 18:00. Приходите знакомиться с дикой природой и внести свой вклад в её сохранение!
+            </p>
+        </div>
+    </section>
+
+    <!-- КЛИМАТИЧЕСКИЕ ЗОНЫ -->
+    <section id="zones" class="zones-section">
+        <h2>Климатические зоны</h2>
+
+        <div class="zones-grid">
+
+            <div class="zone-card">
+                <img src="images/savanna.webp" alt="Африканская саванна">
+                <h3>Африканская саванна</h3>
+                <p>Бескрайние травяные равнины, акации и жаркое солнце — здесь живут самые крупные наземные животные планеты.</p>
+                <a href="#modal-savanna" class="details-link">подробнее...</a>
+            </div>
+
+            <div class="zone-card">
+                <img src="images/jungle.webp" alt="Тропический лес">
+                <h3>Тропический лес</h3>
+                <p>Влажный и тёплый климат, густая зелень и звуки экзотических птиц. В павильоне температура +26°C и влажность 80%.</p>
+                <a href="#modal-jungle" class="details-link">подробнее...</a>
+            </div>
+
+            <div class="zone-card">
+                <img src="images/arctic.webp" alt="Арктика">
+                <h3>Арктика - Субарктика</h3>
+                <p>Ледяные просторы, холодная вода и снег круглый год. Наши животные живут в условиях, приближенных к родной среде.</p>
+                <a href="#modal-arctic" class="details-link">подробнее...</a>
+            </div>
+
+            <div class="zone-card">
+                <img src="images/forest.webp" alt="Умеренные леса">
+                <h3>Умеренные леса</h3>
+                <p>Знакомые нам леса средней полосы: дубы, ели, смена сезонов. Зона посвящена животным нашего региона.</p>
+                <a href="#modal-forest" class="details-link">подробнее...</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ЖИВОТНЫЕ -->
+    <section id="animals" class="animals-section">
+        <img src="images/leaf-top.webp" alt="" class="section-decor section-decor-top">
+        <img src="images/leaf-bottom.webp" alt="" class="section-decor section-decor-bottom">
+
+        <h2>Животные</h2>
+
+        <div class="carousel-track">
+
+            <div class="animal-card">
+                <img src="images/lion.webp" alt="Лев">
+                <h4>Лев</h4>
+                <p>Единственная кошка, живущая в прайде. Рык самца слышен на расстоянии до 8 километров.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/zebra.webp" alt="Зебра">
+                <h4>Зебра</h4>
+                <p>Чёрно-белые полосы уникальны, как отпечаток пальца. Они помогают сбивать с толку хищников.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/rhino.webp" alt="Белый носорог">
+                <h4>Белый носорог</h4>
+                <p>Второе по величине наземное животное после слона. Несмотря на название, его кожа серого цвета.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/giraffe.webp" alt="Жираф">
+                <h4>Жираф</h4>
+                <p>Самое высокое животное мира: рост до 5,5 метров. Уникальный рисунок пятен у каждого.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/jaguar.webp" alt="Ягуар">
+                <h4>Ягуар</h4>
+                <p>Крупнейшая кошка Америки. Отлично плавает и охотится даже на крокодилов.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/orangutan.webp" alt="Орангутан">
+                <h4>Орангутан</h4>
+                <p>Один из самых умных приматов. Умеет использовать палки как инструменты.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/toucan.webp" alt="Тукан">
+                <h4>Тукан</h4>
+                <p>Обладатель огромного яркого клюва. Клюв лёгкий благодаря воздушным камерам внутри.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/sloth.webp" alt="Ленивец">
+                <h4>Ленивец</h4>
+                <p>Спит до 20 часов в сутки. В его шерсти растут водоросли из-за медлительности.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/mammoth.webp" alt="Морж">
+                <h4>Морж</h4>
+                <p>Крупное морское млекопитающее. Может жить до 60 лет и достигать длины 3.5 метров.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/polar-bear.webp" alt="Белый медведь">
+                <h4>Белый медведь</h4>
+                <p>Крупнейший наземный хищник. Под белой шерстью скрывается чёрная кожа.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/randeer.webp" alt="Северный олень">
+                <h4>Северный олень</h4>
+                <p>Единственный олень, у которого рога есть и у самцов, и у самок.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/owl.webp" alt="Полярная сова">
+                <h4>Полярная сова</h4>
+                <p>Хищник, который охотится даже днём. Белое оперение — маскировка среди снега.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/lynx.webp" alt="Рысь">
+                <h4>Рысь</h4>
+                <p>Хищник, который охотится даже днём. Белое оперение — маскировка среди снега.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/deer.webp" alt="Пятнистый олень">
+                <h4>Пятнистый олень</h4>
+                <p>Самый распространенный олень в Европе. Имеет ярко выраженные пятна на шкуре.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/wolf.webp" alt="Волк">
+                <h4>Волк</h4>
+                <p>Социальное животное, живущее в стаях. Имеет высокий уровень интеллекта и способность к обучению.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/bear.webp" alt="Бурый медведь">
+                <h4>Бурый медведь</h4>
+                <p>Хозяин наших лесов. Перед зимой набирает до 150 кг жира.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contacts" class="contacts-section">
+        <h2>Контакты</h2>
+        <div class="contacts-grid">
+            <p>Телефон: <a href="tel:+77777777777">+7(777)777-77-77</a></p>
+            <p>Почта: <a href="mailto:theZOO@mail.com">theZOO@mail.com</a></p>
+            <p class="contacts-address">Адрес: Apache st., 77777 Perfect, Atlantis</p>
+        </div>
+
+        <a href="pic.html" class="lab-link">Лабораторная 1</a>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- МОДАЛЬНЫЕ ОКНА -->
+    <!-- ============================================= -->
+
+    <!-- САВАННА -->
+    <div id="modal-savanna" class="modal">
+        <div class="modal-content">
+            <a href="#zones" class="modal-close"></a>
+            <h2>Африканская саванна</h2>
+            <div class="modal-body">
+                <p>Африканская саванна — это бескрайние травяные равнины, редкие акации и ощущение простора. Здесь, на родине самых крупных наземных животных, наш вольер площадью более 3 гектаров воссоздаёт климат Восточной Африки: сухие сезоны сменяются короткими дождями, а растительность максимально приближена к естественной.</p>
+                <p>Здесь живут слоны, жирафы, львы, зебры и белые носороги. У каждого вида — просторный участок: у слонов грязевые ванны, у жирафов высокие кормушки с акацией, у львов тенистые скалы. Наблюдать за животными можно со смотровых площадок и из сафари-автобуса, проезжающего прямо через вольеры.</p>
+                <p>Мы участвуем в международной программе разведения белых носорогов и слонов, находящихся под угрозой исчезновения. Регулярно проходят кормления под руководством киперов — это зрелище и возможность узнать жизнь саванны изнутри.</p>
+            </div>
+            <img src="images/decor-lion.png" alt="" class="modal-decor decor-savanna-1">
+            <img src="images/decor-rhino.png" alt="" class="modal-decor decor-savanna-2">
+            <img src="images/decor-elephant.png" alt="" class="modal-decor decor-savanna-3">
+            <img src="images/decor-zebra.png" alt="" class="modal-decor decor-savanna-4">
+        </div>
+    </div>
+
+    <!-- ДЖУНГЛИ -->
+    <div id="modal-jungle" class="modal">
+        <div class="modal-content">
+            <a href="#zones" class="modal-close"></a>
+            <h2>Тропический лес</h2>
+            <div class="modal-body">
+                <p>Тропический лес — самая густонаселённая экосистема планеты. В нашем павильоне поддерживается +26°C и влажность 80%, создавая уголок амазонской сельвы в центре города. Здесь пахнет мокрой землёй, слышны крики птиц, а сквозь стеклянный купол пробивается мягкий свет.</p>
+                <p>Обитатели — ягуары, орангутаны, туканы, ленивцы и питоны. Для каждого созданы природные условия: орангутаны получили канаты и платформы, ягуары — бассейн и заросли, ленивцы — высокие ветви. Туканы свободно летают по павильону, а питоны отдыхают в террариумах с подогревом.</p>
+                <p>Тропический лес хрупок: вырубка уничтожает дом для тысяч видов. Наша зона — часть образовательной программы о сохранении джунглей. Мы участвуем в восстановлении популяций орангутанов и ягуаров в дикой природе.</p>
+            </div>
+            <img src="images/decor-sloth.png" alt="" class="modal-decor decor-jungle-1">
+            <img src="images/decor-toucan.png" alt="" class="modal-decor decor-jungle-2">
+            <img src="images/decor-jaguar.png" alt="" class="modal-decor decor-jungle-3">
+            <img src="images/decor-orangutan.png" alt="" class="modal-decor decor-jungle-4">
+        </div>
+    </div>
+
+    <!-- АРКТИКА -->
+    <div id="modal-arctic" class="modal">
+        <div class="modal-content">
+            <a href="#zones" class="modal-close"></a>
+            <h2>Арктика - Субарктика</h2>
+            <div class="modal-body">
+                <p>Арктика — мир вечного холода и выживания на пределе. Здесь зима длится большую часть года, температура опускается до −50°C. В нашей зоне с помощью системы охлаждения поддерживается арктический климат: снежные наносы, ледяные бассейны и холодный воздух круглый год. Это одна из самых технически сложных зон зоопарка.</p>
+                <p>Здесь обитают белые медведи, северные олени, полярные совы, моржи и песцы. Белый медведь получил вольер с бассейном глубиной 5 метров и ледяной пещерой. Моржи плещутся в солёной воде температурой +4°C. Олени гуляют по заснеженной тундре, а совы сидят на высоких насестах.</p>
+                <p>Изменение климата лишает белых медведей охотничьих угодий: лёд тает, и хищники не могут добраться до тюленей. Мы участвуем в программе сохранения вида и отправляем часть средств в фонды защиты Арктики.</p>
+            </div>
+            <img src="images/decor-deer.png" alt="" class="modal-decor decor-arctic-1">
+            <img src="images/decor-walrus.png" alt="" class="modal-decor decor-arctic-2">
+            <img src="images/decor-owl.png" alt="" class="modal-decor decor-arctic-3">
+            <img src="images/decor-polar-bear.png" alt="" class="modal-decor decor-arctic-4">
+        </div>
+    </div>
+
+    <!-- ЛЕСА -->
+    <div id="modal-forest" class="modal">
+        <div class="modal-content">
+            <a href="#zones" class="modal-close"></a>
+            <h2>Умеренные леса</h2>
+            <div class="modal-body">
+                <p>Умеренные леса — наш родной дом: дубы и ели, смена сезонов, запах осенней листвы. Здесь живут животные, знакомые нам по сказкам, но редко видимые вживую. Наша зона воссоздаёт климат средней полосы: зимой снег, весной цветение, летом прохлада, осенью золото листьев. Вольеры вписаны в естественный лес, поэтому животные чувствуют себя почти как в дикой природе.</p>
+                <p>Обитатели — бурые медведи, волки, рыси, пятнистые олени и филины. Медведи живут в лесном вольере с берлогой и прудом. Волки держатся стаей, демонстрируя сложное социальное поведение. Рыси прячутся в зарослях, их выдают кисточки на ушах. Олени гуляют среди деревьев, филины наблюдают с ветвей.</p>
+                <p>Многие из этих животных пострадали от человека. Мы участвуем в программах реабилитации и возвращения зверей в дикую природу, проводим семейные экскурсии и уроки для школьников.</p>
+            </div>
+            <img src="images/decor-fawn.png" alt="" class="modal-decor decor-forest-1">
+            <img src="images/decor-wolf.png" alt="" class="modal-decor decor-forest-2">
+            <img src="images/decor-bear-cub.png" alt="" class="modal-decor decor-forest-3">
+            <img src="images/decor-lynx.png" alt="" class="modal-decor decor-forest-4">
+        </div>
+    </div>
+
+    <!-- СКРИПТ КАРУСЕЛИ -->
+    <script>
+        const track = document.querySelector('.carousel-track');
+        let isDown = false;
+        let startX;
+        let scrollStart;
+
+        track.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - track.offsetLeft;
+            scrollStart = track.scrollLeft;
+        });
+
+        track.addEventListener('mouseup', () => { isDown = false; });
+        track.addEventListener('mouseleave', () => { isDown = false; });
+
+        track.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            track.scrollLeft = scrollStart - (x - startX);
+        });
+    </script>
+
+</body>
+</html>
