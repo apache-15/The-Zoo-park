@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная 2</title>
+    <link rel="stylesheet" href="../styles/fonts.css">
+    <link rel="stylesheet" href="../styles/logo.css">
+    <link rel="stylesheet" href="../styles/animate.css">
+</head>
+
+<body>
+
+    <!-- ШАПКА -->
+    <header class="header">
+        <a href="../index.html" class="logo-link">
+            <div class="logo-paw">
+                <div class="paw-toe toe-1"></div>
+                <div class="paw-toe toe-2"></div>
+                <div class="paw-toe toe-3"></div>
+                <div class="paw-toe toe-4"></div>
+                <div class="paw-pad"></div>
+            </div>
+            <span class="logo-text">The ZOO</span>
+        </a>
+    </header>
+
+    <div class="content">
+        <h1>Иду за мечтой</h1>
+        <p class="lab-text">
+            Анимированная сцена: художник идёт по дороге к своей мечте — звезде. 
+            Наведи на картинку, чтобы увидеть звезду. Нажми на звезду — она закрутится. 
+            Клик по надписи — и появится кисть, рисующая новую мечту.
+        </p>
+
+        <div class="scene-wrapper">
+            <div class="scene">
+
+                <!-- Голубой фон -->
+                <div class="scene-bg"></div>
+
+                <!-- Человечек -->
+                <div class="man-container">
+                    <div class="man"></div>
+                </div>
+
+                <input type="checkbox" id="fake-checkbox" class="fake-checkbox">
+
+                <label for="fake-checkbox" class="title title-default">
+                    <span class="title-text">Иду за мечтой</span>
+                </label>
+
+                <div class="star-wrapper">
+                    <img src="../images/zvezda.png" alt="" class="star">
+                </div>
+
+                <div class="brush-wrapper">
+                    <img src="../images/brush.png" alt="" class="brush">
+                </div>
+
+                <label for="fake-checkbox" class="title title-hover">
+                    <span class="title-text">Мечта рядом!</span>
+                </label>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="stripe stripe-bottom"></div>
+
+</body>
+</html>

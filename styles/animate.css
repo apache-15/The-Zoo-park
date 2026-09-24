@@ -1,0 +1,257 @@
+@font-face {
+    font-family: 'Comic Relief';
+    src: url('../fonts/ComicRelief-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comic Relief';
+    src: url('../fonts/ComicRelief-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --color-bg:      #FDFBF7;  /* бежевый фон страницы */
+    --color-primary: #7E8F6E;  /* оливково-зелёный (обои) */
+    --color-heading: #5A4A42;  /* заголовки */
+    --color-text:    #333333;  /* основной текст */
+    --color-muted:   #666666;  /* приглушённый текст */
+    --color-white:   #FFFFFF;  /* белый (окно) */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--color-primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+body {
+    margin: 0;
+    font-family: 'Comic Relief', cursive;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;/* размер страницы - весь экран */
+}
+
+.stripe{
+    height: 30px;
+    background-color: var(--color-primary);
+    width: 100%;
+}
+
+
+.stripe-bottom{
+    flex-shrink: 0; /* не сжиматься */
+    margin-top: auto; /* прижать к низу */
+}
+
+/* оформление для текстика*/
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 32px;
+    color: var(--color-heading);
+    margin: 0 0 15px;
+}
+
+.lab-text {
+    color: var(--color-muted);
+    max-width: 500px;
+    margin: 0 0 30px;
+    line-height: 1.5;
+}
+
+/* КАРТИНКА*/
+.scene-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.scene{
+    position: relative;
+    width: max(200px, 60%);
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.scene-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        #E8F4F8 0%,
+        #8dd1e7 100%
+    );
+    border: 4px solid #000000;
+}
+
+/* человечек*/
+.man-container {
+    position: absolute;
+    width: 45%;
+    height: 75%;
+    bottom: 10%;
+    left: 30%;
+    z-index: 2;
+}
+
+.man {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-image: url('../images/man1.png');
+}
+
+@keyframes walk {
+    0%   { background-image: url('../images/man1.png'); }
+    20%  { background-image: url('../images/man1.png'); }
+    25%  { background-image: url('../images/man2.png'); }
+    45%  { background-image: url('../images/man2.png'); }
+    50%  { background-image: url('../images/man3.png'); }
+    70%  { background-image: url('../images/man3.png'); }
+    75%  { background-image: url('../images/man2.png'); }
+    95%  { background-image: url('../images/man2.png'); }
+    100% { background-image: url('../images/man1.png'); }
+}
+
+
+.scene:hover .man {
+    animation: walk 1s steps(1) infinite;
+}
+
+/*Надпись*/
+.title {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.scene:hover .title-default {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.title-text {
+    font-size: 28px;
+    color: var(--color-heading);
+    font-weight: bold;
+}
+
+.fake-checkbox {
+    display: none;
+}
+
+
+
+/*Звёздочка*/
+.star-wrapper {
+    position: absolute;
+    top: 8%;
+    right: 22%;
+    width: 40px;
+    height: 40px;
+    z-index: 6;
+    opacity: 0;
+}
+
+.scene:hover .star-wrapper {
+    opacity: 1;
+}
+
+.star {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    offset-path: path('M 0 0 L 40 25 L 25 65 L -25 65 L -40 25 Z');
+
+    offset-distance: 0%;
+    offset-rotate: auto;
+
+    transition: offset-distance 2s linear;
+}
+
+.star-wrapper:hover .star {
+    offset-distance: 100%;
+}
+
+/*Этапы анимации при клике*/
+.fake-checkbox:checked ~ .title-default {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fake-checkbox:checked ~ .title-hover {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 3s ease;
+}
+
+.fake-checkbox:checked ~ .star-wrapper {
+    opacity: 0;
+}
+
+.fake-checkbox:checked ~ .brush-wrapper {
+    opacity: 1;
+    animation: hide-brush 0.4s ease 2s forwards;
+}
+
+@keyframes hide-brush {
+    to { opacity: 0; }
+}
+
+.fake-checkbox:checked ~ .brush-wrapper .brush {
+    offset-path: path('M 0 0 C 60 -30, 120 30, 180 -10 C 240 -50, 300 20, 360 -20');
+    offset-distance: 100%;
+    offset-rotate: auto;
+    transition: offset-distance 2s ease-in-out;
+}
+
+/*Кисть*/
+.brush-wrapper {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-left: -50px;
+    width: 40px;
+    height: 40px;
+    z-index: 7;
+    opacity: 0;
+}
+
+.brush {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+

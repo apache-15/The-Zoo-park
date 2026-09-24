@@ -346,13 +346,21 @@ h2 {
 }
 
 /* ============================================= */
-/* ССЫЛКА НА ЛАБУ В ФУТЕРЕ */
+/* ССЫЛКА НА ЛАБЫ В ФУТЕРЕ */
 /* ============================================= */
+.lab-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
 .lab-link {
     display: inline-block;
-    margin-top: 40px;
     padding: 12px 30px;
     color: var(--color-accent);
+    text-decoration: none;
     font-weight: bold;
     font-size: 16px;
     border: 2px solid var(--color-accent);
