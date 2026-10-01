@@ -254,4 +254,12 @@ body {
     object-fit: contain;
 }
 
+.scene:has(.fake-checkbox:checked) {
+    animation: pulse-scene 1s ease 2s infinite;
+}
+
+@keyframes pulse-scene {
+    50%  { transform: scale(1.15); }
+}
+
 
