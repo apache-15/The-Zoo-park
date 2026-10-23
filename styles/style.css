@@ -27,22 +27,18 @@
 }
 
 * {
-    margin: 0;
+    margin: 0;/* Защита от автоотступов */
     padding: 0;
     box-sizing: border-box;
 }
-
-html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Comic Relief', cursive;
     background-color: var(--color-bg);
     color: var(--color-text);
-    line-height: 1.6;
-    /* Базовый размер шрифта 16px = 1em по умолчанию */
 }
 
-img { max-width: 100%; display: block; }
+img { max-width: 100%}
 
 /* -----------------------------------ШАПКА */
 .header {
@@ -56,18 +52,18 @@ img { max-width: 100%; display: block; }
     z-index: 1000;
 }
 
-.nav {
+
+.nav { /*  контейнер ссыылок меню*/
     display: flex;
     gap: 0.625em;
 }
 
 .nav a {
     color: var(--color-accent);
-    text-decoration: none;
     font-weight: bold;
     font-size: 1em;
     padding: 0.625em 1.375em;
-    border-radius: 1.5625em;
+    border-radius: 1.5em;
     transition: all 0.3s ease;
 }
 
@@ -90,25 +86,24 @@ img { max-width: 100%; display: block; }
     position: relative;
     z-index: 2;
     text-align: center;
-    font-size: 2.125em;
+    font-size: 2.2em;
     color: var(--color-heading);
-    margin-bottom: 1.5625em;
-    margin-left: 10%;
+    margin-left: 12%;
+    margin-bottom: 1.5em; /*  отступ от текста */
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 40em;
-    margin: 0 auto 0 32%;
+    margin: 0 auto 0 40%;
     text-align: center;
 }
 
 .hero-content p {
-    font-size: 1.0625em;
+    font-size: 1.3em;
     color: var(--color-text-muted);
     line-height: 1.7;
-    margin-bottom: 0.9375em;
 }
 
 /* Декор */
@@ -142,8 +137,8 @@ img { max-width: 100%; display: block; }
 /* --------------------КЛИМАТИЧЕСКИЕ ЗОНЫ */
 
 .zones-section {
-    padding: 3.75em 2.5em;
-    max-width: 75em;
+    padding: 3.75em 2.5em; /* чтобы не прилипало к краям */
+    max-width: 83em;
     margin: 0 auto;
 }
 
@@ -168,7 +163,7 @@ h2 {
     border-radius: 1.25em;
     overflow: hidden;
     padding-bottom: 1.25em;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .zone-card:hover {
@@ -191,17 +186,14 @@ h2 {
 
 .zone-card p {
     padding: 0 1.5625em;
-    flex-grow: 1;
     color: var(--color-text-muted);
     font-size: 1em;
 }
 
 .details-link {
-    display: block;
     text-align: center;
     color: var(--color-accent);
     font-weight: bold;
-    text-decoration: underline;
     margin-top: 0.9375em;
     transition: color 0.2s;
 }
@@ -260,7 +252,7 @@ h2 {
 }
 
 .animal-card {
-    flex: 0 0 calc(25% - 0.9375em);
+    flex: 0 0 calc(25% - 0.9375em);/* имеет ширину 25% от контейнера минус отступ между карточками */
     text-align: center;
     background: var(--color-bg);
     border-radius: 0.9375em;
@@ -268,7 +260,7 @@ h2 {
     transition: transform 0.3s ease;
 }
 
-.animal-card:nth-child(even) {
+.animal-card:nth-child(even) {/* шахматный порядок */
     margin-top: 3.75em;
 }
 
@@ -280,8 +272,6 @@ h2 {
     width: 7.5em;
     height: 7.5em;
     border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 0.9375em;
 }
 
 .animal-card h4 {
@@ -297,10 +287,15 @@ h2 {
 
 /* ------------------------------------------КОНТАКТЫ */
 .contacts-section {
-    padding: 3.75em 2.5em 6.25em;
-    max-width: 75em;
-    margin: 0 auto;
+    background-color: var(--color-primary);
+    padding: 3.75em;
     text-align: center;
+}
+
+.contacts-section .container {
+    max-width: 83em;
+    margin: 0 auto;
+    padding: 0 2.5em;
 }
 
 .contacts-grid {
@@ -315,22 +310,6 @@ h2 {
     color: var(--color-text);
 }
 
-.contacts-address {
-    flex: 0 0 100%;
-    margin-top: 0.625em;
-}
-
-.contacts-grid a {
-    color: var(--color-accent);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s;
-}
-
-.contacts-grid a:hover {
-    color: var(--color-heading);
-}
-
 /* -----------------------------------ССЫЛКА НА ЛАБЫ В ФУТЕРЕ */
 .lab-links {
     display: flex;
@@ -341,10 +320,8 @@ h2 {
 }
 
 .lab-link {
-    display: inline-block;
     padding: 0.75em 1.875em;
     color: var(--color-accent);
-    text-decoration: none;
     font-weight: bold;
     font-size: 1em;
     border: 0.125em solid var(--color-accent);
@@ -380,12 +357,14 @@ h2 {
     width: 100%;
     text-align: center;
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-content h2 {
     font-size: 1.875em;
     color: var(--color-heading);
-    margin-top: 0; 
     margin-bottom: 1.25em;
 }
 
@@ -398,6 +377,8 @@ h2 {
     max-width: 50em;
     margin: 0 auto;
     padding: 0 3.125em 6.25em;
+
+    overflow-y: auto;
 }
 
 
@@ -409,7 +390,6 @@ h2 {
     width: 2.25em;
     height: 2.25em;
     z-index: 10;
-    cursor: pointer;
     transition: transform 0.2s;
 }
 
@@ -420,7 +400,7 @@ h2 {
     content: "";
     position: absolute;
     top: 1.0625em;
-    left: 0;
+    left: 0.1em;
     width: 2.25em;
     height: 0.125em;
     background: #B5A89A;
@@ -445,34 +425,38 @@ h2 {
 
 /* Джунгли */
 .decor-jungle-1 { top: 0; left: -0.625em; width: 11.875em; }
-.decor-jungle-2 { bottom: 0; left: -0.625em; width: 10.625em; }
+.decor-jungle-2 {  left: -0.625em; width: 10.625em; }
 .decor-jungle-3 { top: 2.5em; right: -0.625em; width: 11.875em; }
-.decor-jungle-4 { bottom: 0; right: -0.625em; width: 12.5em; }
+.decor-jungle-4 {  right: -0.625em; width: 12.5em; }
 
 /* Арктика */
-.decor-arctic-1 { bottom: 0; left: 5em; width: 12.5em; }/* Олени */
-.decor-arctic-2 { bottom: 0; left: -0.625em; width: 11.25em; }/* Морж */
+.decor-arctic-1 {  left: 5em; width: 12.5em; }/* Олени */
+.decor-arctic-2 {  left: -0.625em; width: 11.25em; }/* Морж */
 .decor-arctic-3 { bottom: 6.875em; right: 1.875em; width: 8.75em; }/* Сова */
-.decor-arctic-4 { bottom: 0; right: -1.25em; width: 12.5em; }/* Медведи */
+.decor-arctic-4 {  right: -1.25em; width: 12.5em; }/* Медведи */
 
 /* Леса */
 .decor-forest-1 { top: 0.625em; left: -0.625em; width: 8.75em; }/* Олень*/
-.decor-forest-2 { bottom: 0; left: -0.625em; width: 16.875em; }/* Волк*/
-.decor-forest-3 { bottom: 0; right: 6.25em; width: 15.625em; }/* Медведь */
-.decor-forest-4 { bottom: 0; right: -1.25em; width: 10em; }/* Рысь */
+.decor-forest-2 {  left: -0.625em; width: 16.875em; }/* Волк*/
+.decor-forest-3 {  right: 6.25em; width: 15.625em; }/* Медведь */
+.decor-forest-4 {  right: -1.25em; width: 10em; }/* Рысь */
 
 /* ----------------------------------------------------АДАПТИВНОСТЬ */
 
 /* Планшет */
 @media (max-width: 56.25em) {
-    .hero-tree-left  { width: 17.5em; left: -2.5em; }
-    .hero-lion       { width: 11.25em; left: 5em; }
-    .hero-tree-right { width: 18.75em; right: -11.25em; }
+    .hero-tree-left  { width: 17.5em; left: -2.5em; opacity: 0.35;}
+    .hero-lion       { width: 11.25em; left: 5em; opacity: 0.35;}
+    .hero-tree-right { width: 18.75em; right: -11.25em; opacity: 0.35;}
 
     .hero h1       { margin-left: 0; font-size: 1.75em; }
     .hero-content  { margin: 0 auto; }
 
     .zones-grid { grid-template-columns: 1fr; }
+    .modal-content { max-height: 90vh;}
+    .modal-decor {
+        opacity: 0.35;
+    }
 
     .animal-card { flex: 0 0 calc(50% - 0.625em); }
     .animal-card:nth-child(even) { margin-top: 2.5em; }
@@ -502,7 +486,7 @@ h2 {
 
     .hero-content p { font-size: 0.9375em; }
 
-    .hero-decor { display: none; }   /* прячем декор */
+    .hero-decor { display: none; }/* прячем декор */
 
     .zones-section,
     .contacts-section { padding: 2.5em 1.25em; }
@@ -529,7 +513,7 @@ h2 {
         padding: 0.625em 1.375em;
     }
 
-    .modal-content { padding: 2.5em 1.5625em; }
+    .modal-content { padding: 2.5em 1.5625em; max-height: 90vh;}
 
     .modal-content h2 { font-size: 1.5em; margin-bottom: 1.25em; }
 
