@@ -28,6 +28,8 @@
 .header {
     display: flex;
     align-items: center;
+    gap: 0;
+    justify-content: flex-start;
     padding: 15px 40px;
     background-color: var(--color-primary);
     position: sticky;
@@ -82,16 +84,18 @@ body {
 }
 
 /* КАРТИНКА*/
-.scene-wrapper{
+.scene-wrapper {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 10%;           
+    margin: 0;              
+    padding: 0;              
 }
 
 .scene{
     position: relative;
-    width: max(200px, 60%);
-    max-width: 600px;
+    width: max(70px, 60%);
+    max-width: 70px;
     aspect-ratio: 1 / 1;
     overflow: hidden;
 }
@@ -262,4 +266,8 @@ body {
     50%  { transform: scale(1.15); }
 }
 
+
+.fake-checkbox:checked ~ .man-container .man {
+    animation: none;
+}
 

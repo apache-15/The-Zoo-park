@@ -1,0 +1,12 @@
+.radios{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.all{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}

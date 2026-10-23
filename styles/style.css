@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Comic Relief';
     src: url('fonts/ComicRelief-Regular.ttf') format('truetype');
@@ -13,12 +12,7 @@
     font-style: normal;
 }
 
-
-
-
-/* ============================================= */
 /* ПЕРЕМЕННЫЕ */
-/* ============================================= */
 :root {
     --color-bg:         #FDFBF7;
     --color-primary:    #7E8F6E;
@@ -45,18 +39,17 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text);
     line-height: 1.6;
+    /* Базовый размер шрифта 16px = 1em по умолчанию */
 }
 
 img { max-width: 100%; display: block; }
 
-/* ============================================= */
-/* ШАПКА */
-/* ============================================= */
+/* -----------------------------------ШАПКА */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 60px;
+    padding: 0.9375em 3.75em;
     background-color: var(--color-primary);
     position: sticky;
     top: 0;
@@ -65,16 +58,16 @@ img { max-width: 100%; display: block; }
 
 .nav {
     display: flex;
-    gap: 10px;
+    gap: 0.625em;
 }
 
 .nav a {
     color: var(--color-accent);
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
-    padding: 10px 22px;
-    border-radius: 25px;
+    font-size: 1em;
+    padding: 0.625em 1.375em;
+    border-radius: 1.5625em;
     transition: all 0.3s ease;
 }
 
@@ -83,13 +76,13 @@ img { max-width: 100%; display: block; }
     color: var(--color-white);
 }
 
-/* ============================================= */
-/* ГЛАВНЫЙ ЭКРАН */
-/* ============================================= */
+
+/* ---------------------------------ГЛАВНЫЙ ЭКРАН */
+
 .hero {
     position: relative;
-    padding: 60px 40px 80px;
-    min-height: 560px;
+    padding: 3.75em 2.5em 5em;
+    min-height: 35em;
     overflow: hidden;
 }
 
@@ -97,25 +90,25 @@ img { max-width: 100%; display: block; }
     position: relative;
     z-index: 2;
     text-align: center;
-    font-size: 34px;
+    font-size: 2.125em;
     color: var(--color-heading);
-    margin-bottom: 25px;
+    margin-bottom: 1.5625em;
     margin-left: 10%;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 640px;
+    max-width: 40em;
     margin: 0 auto 0 32%;
     text-align: center;
 }
 
 .hero-content p {
-    font-size: 17px;
+    font-size: 1.0625em;
     color: var(--color-text-muted);
     line-height: 1.7;
-    margin-bottom: 15px;
+    margin-bottom: 0.9375em;
 }
 
 /* Декор */
@@ -126,81 +119,81 @@ img { max-width: 100%; display: block; }
 
 .hero-tree-left {
     bottom: 0;
-    left: -40px;
-    width: 600px;
+    left: -2.5em;
+    width: 37.5em;
     z-index: 0;
 }
 
 .hero-lion {
     bottom: 0;
-    left: 110px;
-    width: 300px;
+    left: 6.875em;
+    width: 18.75em;
     z-index: 1;
 }
 
 .hero-tree-right {
-    top: -40px;
-    right: -250px;
-    width: 420px;
+    top: -2.5em;
+    right: -15.625em;
+    width: 26.25em;
     z-index: 0;
 }
 
-/* ============================================= */
-/* КЛИМАТИЧЕСКИЕ ЗОНЫ */
-/* ============================================= */
+
+/* --------------------КЛИМАТИЧЕСКИЕ ЗОНЫ */
+
 .zones-section {
-    padding: 60px 40px;
-    max-width: 1200px;
+    padding: 3.75em 2.5em;
+    max-width: 75em;
     margin: 0 auto;
 }
 
 h2 {
     text-align: center;
-    font-size: 32px;
+    font-size: 2em;
     color: var(--color-heading);
-    margin-bottom: 40px;
+    margin-bottom: 2.5em;
 }
 
 .zones-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 1.875em;
 }
 
 .zone-card {
     display: flex;
     flex-direction: column;
     background: var(--color-white);
-    border: 2px solid var(--color-primary);
-    border-radius: 20px;
+    border: 0.125em solid var(--color-primary);
+    border-radius: 1.25em;
     overflow: hidden;
-    padding-bottom: 20px;
+    padding-bottom: 1.25em;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .zone-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px var(--color-shadow);
+    transform: translateY(-0.3125em);
+    box-shadow: 0 0.625em 1.5625em var(--color-shadow);
 }
 
 .zone-card img {
     width: 100%;
-    height: 240px;
+    height: 15em;
     object-fit: cover;
 }
 
 .zone-card h3 {
-    font-size: 24px;
+    font-size: 1.5em;
     color: var(--color-heading);
     text-align: center;
-    margin: 20px 0 10px;
+    margin: 1.25em 0 0.625em;
 }
 
 .zone-card p {
-    padding: 0 25px;
+    padding: 0 1.5625em;
     flex-grow: 1;
     color: var(--color-text-muted);
-    font-size: 16px;
+    font-size: 1em;
 }
 
 .details-link {
@@ -209,7 +202,7 @@ h2 {
     color: var(--color-accent);
     font-weight: bold;
     text-decoration: underline;
-    margin-top: 15px;
+    margin-top: 0.9375em;
     transition: color 0.2s;
 }
 
@@ -217,17 +210,17 @@ h2 {
     color: var(--color-heading);
 }
 
-/* ============================================= */
-/* ЖИВОТНЫЕ */
-/* ============================================= */
+
+/* ------------------------------------ЖИВОТНЫЕ */
+
 .animals-section {
     position: relative;
-    padding: 60px 0 80px;
+    padding: 3.75em 0 5em;
     overflow: hidden;
 }
 
 .animals-section h2 {
-    padding: 0 40px;
+    padding: 0 2.5em;
     position: relative;
     z-index: 2;
 }
@@ -235,84 +228,77 @@ h2 {
 .section-decor {
     position: absolute;
     pointer-events: none;
-    z-index: 0;
+    z-index: 3;
 }
 
 .section-decor-top {
     top: 0;
-    right: -30px;
-    width: 260px;
+    right: -1.875em;
+    width: 16.25em;
 }
 
 .section-decor-bottom {
-    bottom: -30px;
-    left: -30px;
-    width: 240px;
+    bottom: -1.875em;
+    left: -1.875em;
+    width: 15em;
 }
 
 .carousel-track {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
+    gap: 1.25em;
     overflow-x: auto;
-    padding: 30px 40px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    cursor: grab;
+    padding: 1.875em 2.5em;
+    
     position: relative;
     z-index: 2;
 }
 
-.carousel-track::-webkit-scrollbar { display: none; }
-
-.carousel-track img {
-    user-select: none;
-    -webkit-user-drag: none;
-    pointer-events: none;
+/* Скрытие скроллбара */
+.carousel-track::-webkit-scrollbar {
+    display: none;
 }
 
 .animal-card {
-    flex: 0 0 calc(25% - 15px);
+    flex: 0 0 calc(25% - 0.9375em);
     text-align: center;
     background: var(--color-bg);
-    border-radius: 15px;
-    padding: 25px 20px;
+    border-radius: 0.9375em;
+    padding: 1.5625em 1.25em;
     transition: transform 0.3s ease;
 }
 
 .animal-card:nth-child(even) {
-    margin-top: 60px;
+    margin-top: 3.75em;
 }
 
 .animal-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125em);
 }
 
 .animal-card img {
-    width: 120px;
-    height: 120px;
+    width: 7.5em;
+    height: 7.5em;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto 15px;
+    margin: 0 auto 0.9375em;
 }
 
 .animal-card h4 {
-    font-size: 20px;
+    font-size: 1.25em;
     color: var(--color-heading);
-    margin-bottom: 10px;
+    margin-bottom: 0.625em;
 }
 
 .animal-card p {
-    font-size: 14px;
+    font-size: 0.875em;
     color: var(--color-text-muted);
 }
 
-/* ============================================= */
-/* КОНТАКТЫ */
-/* ============================================= */
+/* ------------------------------------------КОНТАКТЫ */
 .contacts-section {
-    padding: 60px 40px 100px;
-    max-width: 1200px;
+    padding: 3.75em 2.5em 6.25em;
+    max-width: 75em;
     margin: 0 auto;
     text-align: center;
 }
@@ -321,17 +307,17 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px 80px;
+    gap: 1.25em 5em;
 }
 
 .contacts-grid p {
-    font-size: 17px;
+    font-size: 1.0625em;
     color: var(--color-text);
 }
 
 .contacts-address {
     flex: 0 0 100%;
-    margin-top: 10px;
+    margin-top: 0.625em;
 }
 
 .contacts-grid a {
@@ -345,26 +331,24 @@ h2 {
     color: var(--color-heading);
 }
 
-/* ============================================= */
-/* ССЫЛКА НА ЛАБЫ В ФУТЕРЕ */
-/* ============================================= */
+/* -----------------------------------ССЫЛКА НА ЛАБЫ В ФУТЕРЕ */
 .lab-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25em;
     flex-wrap: wrap;
-    margin-top: 40px;
+    margin-top: 2.5em;
 }
 
 .lab-link {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 0.75em 1.875em;
     color: var(--color-accent);
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
-    border: 2px solid var(--color-accent);
-    border-radius: 25px;
+    font-size: 1em;
+    border: 0.125em solid var(--color-accent);
+    border-radius: 1.5625em;
     transition: all 0.3s ease;
 }
 
@@ -373,9 +357,7 @@ h2 {
     color: var(--color-white);
 }
 
-/* ============================================= */
-/* МОДАЛЬНЫЕ ОКНА */
-/* ============================================= */
+/* ---------------------------------------------МОДАЛЬНЫЕ ОКНА */
 .modal {
     display: none;
     position: fixed;
@@ -384,7 +366,7 @@ h2 {
     z-index: 2000;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 1.25em;
 }
 
 .modal:target { display: flex; }
@@ -392,44 +374,40 @@ h2 {
 .modal-content {
     position: relative;
     background-color: var(--color-modal-bg);
-    border-radius: 20px;
-    padding: 50px 70px;
-    max-width: 1000px;
+    border-radius: 1.25em;
+    padding: 0.625em 4.375em 3.125em;
+    max-width: 62.5em;
     width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     text-align: center;
+    overflow: hidden;
 }
 
 .modal-content h2 {
-    font-size: 36px;
+    font-size: 1.875em;
     color: var(--color-heading);
-    margin-bottom: 25px;
+    margin-top: 0; 
+    margin-bottom: 1.25em;
 }
 
 .modal-body {
     position: relative;
     z-index: 2;
     text-align: left;
-    font-size: 17px;
+    font-size: 1.0625em;
     color: var(--color-text);
-    line-height: 1.7;
-    max-width: 800px;
+    max-width: 50em;
     margin: 0 auto;
+    padding: 0 3.125em 6.25em;
 }
 
-.modal-body p {
-    margin-bottom: 15px;
-}
 
 /* Кнопка закрытия */
 .modal-close {
     position: absolute;
-    top: 20px;
-    right: 25px;
-    width: 36px;
-    height: 36px;
+    top: 1.25em;
+    right: 1.5625em;
+    width: 2.25em;
+    height: 2.25em;
     z-index: 10;
     cursor: pointer;
     transition: transform 0.2s;
@@ -441,12 +419,12 @@ h2 {
 .modal-close::after {
     content: "";
     position: absolute;
-    top: 17px;
+    top: 1.0625em;
     left: 0;
-    width: 36px;
-    height: 2px;
+    width: 2.25em;
+    height: 0.125em;
     background: #B5A89A;
-    border-radius: 2px;
+    border-radius: 0.125em;
 }
 
 .modal-close::before { transform: rotate(45deg); }
@@ -455,130 +433,115 @@ h2 {
 /* Декор в модалках */
 .modal-decor {
     position: absolute;
-    pointer-events: none;
     z-index: 1;
+    bottom: 0;
 }
 
 /* Саванна */
-.decor-savanna-1 { bottom: 0; left: -10px; width: 170px; }
-.decor-savanna-2 { bottom: 0; left: 130px; width: 180px; }
-.decor-savanna-3 { bottom: 0; right: 130px; width: 180px; }
-.decor-savanna-4 { bottom: 0; right: -10px; width: 140px; }
+.decor-savanna-1 { left: 0; width: 8.125em; }/* Лев */
+.decor-savanna-2 { left: 7.5em; width: 10.625em; }/* Носорог */
+.decor-savanna-3 { right: 7.5em; width: 8.75em; }/* Слон */
+.decor-savanna-4 { right: 0; width: 6.875em; }/* Зебра */
 
 /* Джунгли */
-.decor-jungle-1 { top: 0; left: -10px; width: 190px; }
-.decor-jungle-2 { bottom: 0; left: -10px; width: 170px; }
-.decor-jungle-3 { top: 0; right: -10px; width: 190px; }
-.decor-jungle-4 { bottom: 0; right: -10px; width: 200px; }
+.decor-jungle-1 { top: 0; left: -0.625em; width: 11.875em; }
+.decor-jungle-2 { bottom: 0; left: -0.625em; width: 10.625em; }
+.decor-jungle-3 { top: 2.5em; right: -0.625em; width: 11.875em; }
+.decor-jungle-4 { bottom: 0; right: -0.625em; width: 12.5em; }
 
 /* Арктика */
-.decor-arctic-1 { top: 10px; left: -10px; width: 200px; }
-.decor-arctic-2 { bottom: 0; left: -10px; width: 180px; }
-.decor-arctic-3 { top: 30px; right: -10px; width: 140px; }
-.decor-arctic-4 { bottom: 0; right: -20px; width: 200px; }
+.decor-arctic-1 { bottom: 0; left: 5em; width: 12.5em; }/* Олени */
+.decor-arctic-2 { bottom: 0; left: -0.625em; width: 11.25em; }/* Морж */
+.decor-arctic-3 { bottom: 6.875em; right: 1.875em; width: 8.75em; }/* Сова */
+.decor-arctic-4 { bottom: 0; right: -1.25em; width: 12.5em; }/* Медведи */
 
 /* Леса */
-.decor-forest-1 { top: 10px; left: -10px; width: 140px; }
-.decor-forest-2 { bottom: 0; left: -10px; width: 170px; }
-.decor-forest-3 { bottom: 0; right: 100px; width: 150px; }
-.decor-forest-4 { bottom: 0; right: -20px; width: 160px; }
+.decor-forest-1 { top: 0.625em; left: -0.625em; width: 8.75em; }/* Олень*/
+.decor-forest-2 { bottom: 0; left: -0.625em; width: 16.875em; }/* Волк*/
+.decor-forest-3 { bottom: 0; right: 6.25em; width: 15.625em; }/* Медведь */
+.decor-forest-4 { bottom: 0; right: -1.25em; width: 10em; }/* Рысь */
 
-/* ============================================= */
-/* АДАПТИВНОСТЬ */
-/* ============================================= */
+/* ----------------------------------------------------АДАПТИВНОСТЬ */
 
 /* Планшет */
-@media (max-width: 992px) {
-    .hero-tree-left  { width: 280px; left: -40px; }
-    .hero-lion       { width: 180px; left: 80px; }
-    .hero-tree-right { width: 300px; right: -180px; }
+@media (max-width: 56.25em) {
+    .hero-tree-left  { width: 17.5em; left: -2.5em; }
+    .hero-lion       { width: 11.25em; left: 5em; }
+    .hero-tree-right { width: 18.75em; right: -11.25em; }
 
-    .hero h1       { margin-left: 0; font-size: 28px; }
+    .hero h1       { margin-left: 0; font-size: 1.75em; }
     .hero-content  { margin: 0 auto; }
 
     .zones-grid { grid-template-columns: 1fr; }
 
-    .animal-card { flex: 0 0 calc(50% - 10px); }
-    .animal-card:nth-child(even) { margin-top: 40px; }
+    .animal-card { flex: 0 0 calc(50% - 0.625em); }
+    .animal-card:nth-child(even) { margin-top: 2.5em; }
 }
 
 /* Мобильный */
-@media (max-width: 768px) {
+@media (max-width: 37.5em) {
     .header {
         flex-direction: column;
-        padding: 15px 20px;
-        gap: 12px;
+        padding: 0.9375em 1.25em;
+        gap: 0.75em;
     }
 
-    .logo { font-size: 26px; }
-
-    .nav { flex-wrap: wrap; justify-content: center; gap: 6px; }
+    .nav { flex-wrap: wrap; justify-content: center; gap: 0.375em; }
 
     .nav a {
-        font-size: 14px;
-        padding: 7px 14px;
+        font-size: 0.875em;
+        padding: 0.4375em 0.875em;
     }
 
     .hero {
-        padding: 40px 20px 50px;
+        padding: 2.5em 1.25em 3.125em;
         min-height: auto;
     }
 
-    .hero h1 { font-size: 22px; margin-left: 0; }
+    .hero h1 { font-size: 1.375em; margin-left: 0; }
 
-    .hero-content p { font-size: 15px; }
+    .hero-content p { font-size: 0.9375em; }
 
     .hero-decor { display: none; }   /* прячем декор */
 
     .zones-section,
-    .contacts-section { padding: 40px 20px; }
+    .contacts-section { padding: 2.5em 1.25em; }
 
-    h2 { font-size: 24px; margin-bottom: 25px; }
+    h2 { font-size: 1.5em; margin-bottom: 1.5625em; }
 
-    .zone-card img { height: 180px; }
+    .zone-card img { height: 11.25em; }
 
-    .animals-section h2 { padding: 0 20px; }
+    .animals-section h2 { padding: 0 1.25em; }
 
     .section-decor { display: none; }
 
-    .carousel-track { padding: 20px; gap: 15px; }
+    .carousel-track { padding: 1.25em; gap: 0.9375em; }
 
     .animal-card { flex: 0 0 90%; }
     .animal-card:nth-child(even) { margin-top: 0; }
 
-    .animal-card img { width: 100px; height: 100px; }
+    .animal-card img { width: 6.25em; height: 6.25em; }
 
-    .contacts-grid { flex-direction: column; gap: 12px; }
+    .contacts-grid { flex-direction: column; gap: 0.75em; }
 
     .lab-link {
-        font-size: 14px;
-        padding: 10px 22px;
-        margin-top: 30px;
+        font-size: 0.875em;
+        padding: 0.625em 1.375em;
     }
 
-    .modal-content { padding: 40px 25px; }
+    .modal-content { padding: 2.5em 1.5625em; }
 
-    .modal-content h2 { font-size: 24px; margin-bottom: 20px; }
+    .modal-content h2 { font-size: 1.5em; margin-bottom: 1.25em; }
 
-    .modal-body { font-size: 15px; }
+    .modal-body { font-size: 0.9375em; padding: 0;}
 
-    .modal-close { width: 30px; height: 30px; top: 15px; right: 15px; }
+    .modal-close { width: 1.875em; height: 1.875em; top: 0.9375em; right: 0.9375em; }
 
     .modal-close::before,
     .modal-close::after {
-        width: 30px;
-        top: 14px;
+        width: 1.875em;
+        top: 0.875em;
     }
 
     .modal-decor { display: none; }   /* прячем декор в модалках */
-}
-
-/* Очень узкий экран */
-@media (max-width: 480px) {
-    .nav a { font-size: 13px; padding: 6px 12px; }
-
-    .hero h1 { font-size: 20px; }
-    .hero-content p { font-size: 14px; }
-
-    .animal-card { flex: 0 0 100%; }
 }
