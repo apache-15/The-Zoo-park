@@ -486,7 +486,7 @@ h2 {
 
     .hero-content p { font-size: 0.9375em; }
 
-    .hero-decor { display: none; }/* прячем декор */
+    .hero-decor { opacity: 0.3;}/* прячем декор */
 
     .zones-section,
     .contacts-section { padding: 2.5em 1.25em; }
@@ -497,7 +497,7 @@ h2 {
 
     .animals-section h2 { padding: 0 1.25em; }
 
-    .section-decor { display: none; }
+    .section-decor { opacity: 0.3; }
 
     .carousel-track { padding: 1.25em; gap: 0.9375em; }
 
@@ -527,5 +527,5 @@ h2 {
         top: 0.875em;
     }
 
-    .modal-decor { display: none; }   /* прячем декор в модалках */
+    .modal-decor { opacity: 0.3; }   /* прячем декор в модалках */
 }
