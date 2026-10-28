@@ -74,16 +74,26 @@ for (var i = 0; i < quizData.length; i++) {
 }
 
 function renderQuestion() {
-    if (currentQuestionIndex >= quizData.length) {
+   if (currentQuestionIndex >= quizData.length) {
         finishQuiz();
         return;
     }
     
     var currentQ = quizData[currentQuestionIndex];
+    
+    //Ищем правильный ответ чтобы сохранить его в атрибут
+    var correctTexts = [];
+    for (var c = 0; c < currentQ.answers.length; c++) {
+        if (currentQ.answers[c].correct === true) {
+            correctTexts.push(currentQ.answers[c].text);
+        }
+    }
+    var allCorrectAnswersText = correctTexts.join(' ИЛИ '); 
 
     var questionBlock = document.createElement('div');
     questionBlock.className = 'question-block';
-    questionBlock.setAttribute('data-explanation', currentQ.explanation);
+    
+    questionBlock.setAttribute('data-correct-answer', allCorrectAnswersText);
 
     // Шапка вопроса
     var header = document.createElement('div');
@@ -114,7 +124,6 @@ function renderQuestion() {
         
         var label = document.createElement('label');
         label.className = 'answer-label';
-        label.setAttribute('data-correct', answerObj.correct);
 
         var radio = document.createElement('input');
         radio.type = 'radio';
@@ -174,7 +183,7 @@ function handleAnswerClick(clickedRadio, currentQ, questionBlock, answersContain
 
     setTimeout(function() {
         flyAwayAnswers(allLabels, questionBlock, isCorrect, clickedLabel);
-    }, 2000);
+    }, 1000);
 }
 
 function flyAwayAnswers(allLabels, questionBlock, isCorrect, clickedLabel) {
@@ -224,30 +233,34 @@ function finishQuiz() {
         let currentBlock = allQuestionBlocks[i]; 
         
         currentBlock.onclick = function() {
-            //Скрываем все открытые подсказки во всех вопросах
-            var allOpenExplanations = document.querySelectorAll('.question-block .explanation');
-            for (var j = 0; j < allOpenExplanations.length; j++) {
-                allOpenExplanations[j].style.display = 'none';
+            //Скрываем все открытые правильные ответы
+            var allOpenAnswers = document.querySelectorAll('.question-block .correct_ans');
+            for (var j = 0; j < allOpenAnswers.length; j++) {
+                allOpenAnswers[j].style.display = 'none';
             }
             
-            var existingExplanation = currentBlock.querySelector('.explanation');
+            var existingAnswer = currentBlock.querySelector('.correct_ans');
             var header = currentBlock.querySelector('.question-header');
             
-            if (existingExplanation) {
-                // Если пояснение есть, но оно лежит в скрытом блоке ответов, то переносим его в шапку
-                if (existingExplanation.parentElement !== header) {
-                    header.appendChild(existingExplanation);
+            if (existingAnswer) {
+                //Если правильный ответ уже есть, показываем/скрываем его
+                if (existingAnswer.parentElement !== header) {
+                    header.appendChild(existingAnswer);
                 }
                 
-                if (existingExplanation.style.display === 'none') {
-                    existingExplanation.style.display = 'block';
+                if (existingAnswer.style.display === 'none') {
+                    existingAnswer.style.display = 'block';
                 } else {
-                    existingExplanation.style.display = 'none';
+                    existingAnswer.style.display = 'none';
                 }
-            } else {
+            } 
+            else {
+                //Создаем блок с правильным ответом
                 var exp = document.createElement('div');
-                exp.className = 'explanation';
-                exp.innerText = currentBlock.getAttribute('data-explanation');
+                exp.className = 'correct_ans';
+                
+                exp.innerText = 'Правильный ответ: ' + currentBlock.getAttribute('data-correct-answer');
+                
                 header.appendChild(exp);
             }
         };

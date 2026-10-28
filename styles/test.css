@@ -141,7 +141,7 @@ body {
 
 /* ОТВЕТЫ */
 .answers-wrapper {
-    padding-left: 0em;
+    padding-left: 0;
 }
 
 .answers-container {
@@ -187,15 +187,21 @@ body {
     line-height: 1.4;
 }
 
+.correct_ans {
+    display: block;
+    width: 100%;
+    margin-top: 0.625em;
+    font-size: 1em;
+    color: var(--color-success, #2E7D32);
+    font-weight: bold; /* Жирный шрифт */
+    line-height: 1.4;
+}
+
 /* АНИМАЦИИ И ФИНАЛ */
 .answer-label.fly-right {
     transform: translateX(150%);
     opacity: 0;
     pointer-events: none;
-}
-
-.answer-label.hidden {
-    display: none;
 }
 
 .end-title {
@@ -214,14 +220,29 @@ body {
     margin-bottom: 1.875em;
 }
 
-.question-block.finished {
-    cursor: pointer;
-}
-
-.question-block.finished .question-header {
-    transition: background-color 0.3s;
-}
-
 .question-block.finished .question-header:hover {
     background-color: #f0f0f0;
+}
+
+@media (max-width: 37.5em) { /* 600px */
+    
+    .content {
+        padding: 1em 0.5em;
+    }
+
+    .quiz-container {
+        padding: 1.5em 1em;
+        font-size: 0.75em;
+    }
+
+    .question-header {
+        padding: 0.8em;
+        gap: 0.5em;
+    }
+
+    .answer-label {
+        flex: 1 1 0;
+        padding: 0.4em 0.6em; 
+        font-size: 0.8em;     
+    }
 }
