@@ -152,6 +152,11 @@ function handleAnswerClick(clickedRadio, currentQ, questionBlock, answersContain
     var clickedLabel = clickedRadio.parentElement;
     clickedLabel.classList.add('active');
 
+    var allRadios = answersContainer.querySelectorAll('.answer-radio');
+    for (var r = 0; r < allRadios.length; r++) {
+        allRadios[r].disabled = true; //блокировка кнопок после ответа
+    }
+
     var clickedText = clickedLabel.querySelector('.answer-text').innerText;
     var isCorrect = false;
     
