@@ -92,7 +92,6 @@ body {
     width: 100%;
     max-width: 70em;
     min-height: 40em;
-    box-shadow: 0 0.625em 1.875em rgba(0, 0, 0, 0.1);
     overflow: hidden; 
     position: relative;
     text-align: left; 
@@ -125,7 +124,6 @@ body {
     font-size: 1.25em;
     color: var(--color-heading);
     font-weight: bold;
-    margin: 0;
 }
 
 .marker {
@@ -149,7 +147,7 @@ body {
 .answers-container {
     display: flex;
     flex-wrap: wrap; 
-    gap: 0.9375em;
+    gap: 0.93em;
     align-items: flex-start;
 }
 
