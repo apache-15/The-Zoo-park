@@ -69,6 +69,7 @@ function shuffle(array) {
 
 shuffle(quizData);
 
+
 for (var i = 0; i < quizData.length; i++) {
     shuffle(quizData[i].answers);
 }

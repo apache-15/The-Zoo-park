@@ -1,0 +1,187 @@
+:root {
+    --color-bg:      #FDFBF7;
+    --color-primary: #7E8F6E;
+    --color-accent:  #8B3A22;
+    --color-heading: #5A4A42;
+    --color-text:    #333333;
+    --color-muted:   #666666;
+    --color-white:   #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Comic Relief', cursive;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 0.9375em 2.5em;
+    background-color: var(--color-primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.stripe {
+    height: 1.875em;
+    background-color: var(--color-primary);
+    width: 100%;
+}
+
+.stripe-bottom {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5em 1.25em;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 2em;
+    color: var(--color-heading);
+    margin-bottom: 1.5em;
+}
+
+
+.lab-container {
+    width: 100%;
+    max-width: 60em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin: 0 auto;
+}
+
+.bottom-row {
+    display: flex;
+    gap: 1.5em;
+    align-items: stretch;
+}
+
+/* Общие стили для зон (без ярких рамок) */
+.zone {
+    background-color: var(--color-white);
+    border-radius: 0.75em;
+    padding: 1.25em;
+    border: 0.125em solid var(--color-primary);
+    
+}
+
+
+.zone-3 {
+    min-height: 10em;
+    position: relative;
+    overflow: hidden;
+}
+
+.zone-3 .word-block {
+    position: absolute;
+    margin: 0;
+    z-index: 10;
+}
+
+.zone-2 {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    min-height: 400px;
+    align-content: flex-start;
+}
+
+.zone-1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+
+/* ЭЛЕМЕНТЫ ВНУТРИ ЗОНЫ 1 */
+.input-group {
+    display: flex;
+    gap: 1em;
+}
+
+.word-input {
+    flex: 1;
+    padding: 0.75em 1em;
+    font-family: inherit;
+    font-size: 1em;
+    border: 0.125em solid var(--color-accent);
+    border-radius: 0.375em;
+    background-color: var(--color-bg);
+}
+
+.parse-btn {
+    padding: 0.75em 1.5em;
+    font-family: inherit;
+    font-size: 1em;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 0.375em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.parse-btn:hover {
+    background-color: var(--color-accent);
+}
+
+.output-box {
+    min-height: 4em;
+    padding: 1em;
+    background-color: var(--color-bg);
+    border-radius: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+/* Зона 2 */
+.word-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 10em;
+    height: 2.5em;
+    
+    white-space: nowrap; /* без переносов */
+    overflow: hidden;
+
+    color: #333;
+    font-weight: bold;
+    
+}
+
+/* АДАПТИВ */
+@media (max-width: 800px) {
+    .bottom-row {
+        flex-direction: column;
+    }
+    .zone-2 {
+        flex: 1;
+        min-height: 200px;
+    }
+}
